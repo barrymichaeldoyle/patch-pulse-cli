@@ -1,6 +1,6 @@
 {
   "name": "patch-pulse-cli",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "bin": {
     "patch-pulse-cli": "lib/index.js"
   },
@@ -25,5 +25,11 @@
     "app-darwin-arm64": "*",
     "app-windows-x64": "*",
     "app-windows-arm64": "*"
-  }
+  },
+  "os": [
+    "macos-11"
+  ],
+  "cpu": [
+    "aarch64-apple-darwin"
+  ]
 }
