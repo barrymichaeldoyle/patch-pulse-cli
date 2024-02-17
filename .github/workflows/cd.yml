@@ -65,11 +65,11 @@ jobs:
           override: true
 
       - name: Build
-        uses: actions-rs/cargo@v1
+        uses: rust-build/rust-build.action@v1.4.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          command: build
-          args: --release --locked --target ${{ matrix.build.TARGET }}
-          use-cross: ${{ matrix.build.OS == 'ubuntu-20.04' }} # use `cross` for Linux builds
+          RUSTTARGET: ${{ matrix.target }}
 
       - name: List build output
         shell: bash
