@@ -60,7 +60,7 @@ jobs:
       - name: Setup OpenSSL for Linux ARM64
         if: matrix.build.NAME == 'linux-arm64-glibc'
         run: |
-          sudo apt install libssl-dev
+          sudo apt install openssl1.0 libssl1.0.0 libssl1.0-dev
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
