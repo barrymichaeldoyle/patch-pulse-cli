@@ -142,6 +142,6 @@ jobs:
           cd npm/app
           npm install # requires optional dependencies to be present in the registry
           npm run build
-          npm publish --access public --dry-run
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
