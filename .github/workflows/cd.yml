@@ -64,16 +64,15 @@ jobs:
           target: ${{ matrix.build.TARGET }}
           override: true
 
+      - name: Cache dependencies
+        uses: Swatinem/rust-cache@v2
+
       - name: Build
-        uses: rust-build/rust-build.action@v1.4.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          RUSTTARGET: ${{ matrix.target }}
+        run: cargo build --release --target ${{ matrix.build.TARGET }}
 
       - name: List build output
         shell: bash
-        run: ls -alh "../target/${{ matrix.build.TARGET }}/release/"
+        run: ls -alh "target/${{ matrix.build.TARGET }}/release/"
 
       - name: Install node
         uses: actions/setup-node@v3
