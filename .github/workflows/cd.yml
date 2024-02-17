@@ -73,6 +73,8 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Build
+        env:
+          RUSTFLAGS: "-C linker=aarch64-linux-gnu-gcc"
         run: cargo build --release --target ${{ matrix.build.TARGET }}
 
       - name: Install node
