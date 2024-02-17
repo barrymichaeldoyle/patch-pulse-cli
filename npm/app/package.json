@@ -25,11 +25,5 @@
     "app-darwin-arm64": "*",
     "app-windows-x64": "*",
     "app-windows-arm64": "*"
-  },
-  "os": [
-    "macos-11"
-  ],
-  "cpu": [
-    "aarch64-apple-darwin"
-  ]
+  }
 }
