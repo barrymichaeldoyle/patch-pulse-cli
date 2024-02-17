@@ -70,7 +70,7 @@ jobs:
         run: cargo build --release --target ${{ matrix.build.TARGET }}
 
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
           registry-url: "https://registry.npmjs.org"
