@@ -57,6 +57,12 @@ jobs:
         shell: bash
         run: echo "RELEASE_VERSION=${GITHUB_REF:11}" >> $GITHUB_ENV
 
+      - name: Set OpenSSL paths for cross-compilation
+        run: |
+          echo "OPENSSL_DIR=${GITHUB_WORKSPACE}/openssl/arm64" >> $GITHUB_ENV
+          echo "OPENSSL_LIB_DIR=${GITHUB_WORKSPACE}/openssl/arm64/lib" >> $GITHUB_ENV
+          echo "OPENSSL_INCLUDE_DIR=${GITHUB_WORKSPACE}/openssl/arm64/include" >> $GITHUB_ENV
+
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
