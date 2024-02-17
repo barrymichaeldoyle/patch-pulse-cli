@@ -63,12 +63,33 @@ jobs:
           echo "OPENSSL_LIB_DIR=${GITHUB_WORKSPACE}/openssl/arm64/lib" >> $GITHUB_ENV
           echo "OPENSSL_INCLUDE_DIR=${GITHUB_WORKSPACE}/openssl/arm64/include" >> $GITHUB_ENV
 
+      - name: Install OpenSSL libraries for linux architectures
+        if: ${{ matrix.build.NAME == 'linux-arm64-glibc' || matrix.build.NAME == 'linux-x64-glibc' }}
+        run: |
+          if [ "${{ matrix.build.NAME }}" == "linux-arm64-glibc" ]; then
+            # Set up for ARM64
+            mkdir -p openssl/arm64/lib
+            mkdir -p openssl/arm64/include
+            # Download and setup OpenSSL for ARM64
+            wget -O openssl-arm64.tar.gz https://www.openssl.org/source/openssl-3.0.7.tar.gz
+            tar -xzf openssl-arm64.tar.gz -C openssl/arm64
+            # Assume the tarball has 'lib' and 'include' directories at its root
+          elif [ "${{ matrix.build.NAME }}" == "linux-x64-glibc" ]; then
+            # Set up for X64
+            mkdir -p openssl/x64/lib
+            mkdir -p openssl/x64/include
+            # Download and setup OpenSSL for X64
+            wget -O openssl-x64.tar.gz https://www.openssl.org/source/openssl-3.0.7.tar.gz
+            tar -xzf openssl-x64.tar.gz -C openssl/x64
+            # Assume the tarball has 'lib' and 'include' directories at its root
+          fi
+        shell: bash
+
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: ${{ matrix.build.TOOLCHAIN }}
           target: ${{ matrix.build.TARGET }}
-          override: true
 
       - name: Cache dependencies
         uses: Swatinem/rust-cache@v2
