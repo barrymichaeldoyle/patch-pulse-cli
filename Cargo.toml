@@ -13,3 +13,6 @@ colored = "2"
 reqwest = { version = "0.11", default-features = false , features = ["rustls-tls-native-roots"] }
 tokio = { version = "1", features = ["full"] }
 semver = "1.0"
+
+[target.aarch64-unknown-linux-gnu]
+linker = "aarch64-linux-gnu-gcc"
