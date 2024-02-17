@@ -1,0 +1,27 @@
+{
+  "name": "patch-pulse-cli",
+  "version": "0.1.0",
+  "bin": "lib/index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsc",
+    "dev": "npm run build && node lib/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
+    "typescript": "^4.9.4"
+  },
+  "optionalDependencies": {
+    "app-linux-x64": "*",
+    "app-linux-arm64": "*",
+    "app-darwin-x64": "*",
+    "app-darwin-arm64": "*",
+    "app-windows-x64": "*",
+    "app-windows-arm64": "*"
+  }
+}
