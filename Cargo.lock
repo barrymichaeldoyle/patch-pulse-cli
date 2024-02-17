@@ -523,7 +523,6 @@ dependencies = [
  "colored",
  "openssl",
  "reqwest",
- "ring",
  "semver",
  "serde",
  "serde_json",
