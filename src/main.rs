@@ -19,6 +19,23 @@ async fn main() {
         Ok(package_json) => print_package_json(package_json).await,
         Err(error) => eprintln!("{}", error.red()),
     }
+
+    println!();
+    println!(
+        "{}",
+        "Thank you for using Patch Pulse CLI!".bright_green().bold()
+    );
+    println!(
+        "{}",
+        "If you find this tool helpful, consider supporting my work: https://www.buymeacoffee.com/barrycg"
+            .bright_green().bold()
+    );
+    println!(
+        "{}",
+        "Found an issue or have a feature request? Please report it here: https://github.com/barrymichaeldoyle/patch-pulse-cli/issues"
+            .bright_green().bold()
+    );
+    println!();
 }
 
 async fn print_package_json(package_json: PackageJson) {
