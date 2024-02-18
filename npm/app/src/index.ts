@@ -20,7 +20,7 @@ function getExePath() {
   }
 
   try {
-    return require.resolve(`patch-pulse-cli-${os}-${arch}/bin/patch-pulse-cli${extension}`);
+    return require.resolve(`patch-pulse-${os}-${arch}/bin/patch-pulse${extension}`);
   } catch (e) {
     throw new Error(
       `Couldn't find application binary inside node_modules for ${os}-${arch}`
