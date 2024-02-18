@@ -1,5 +1,5 @@
 use colored::*;
-use patch_pulse_cli::{check_and_print_dependency_versions, read_package_json, PackageJson};
+use patch_pulse::{check_and_print_dependency_versions, read_package_json, PackageJson};
 use std::env;
 
 #[tokio::main]
