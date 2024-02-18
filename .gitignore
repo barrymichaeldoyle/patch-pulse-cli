@@ -1,3 +1,4 @@
 /target
 node_modules
 npm/app/lib
+/package.json

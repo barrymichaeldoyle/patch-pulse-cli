@@ -24,4 +24,12 @@ async fn main() {
 async fn print_package_json(package_json: PackageJson) {
     check_and_print_dependency_versions("Dependencies", package_json.dependencies).await;
     check_and_print_dependency_versions("Dev Dependencies", package_json.dev_dependencies).await;
+    check_and_print_dependency_versions("Peer Dependencies", package_json.peer_dependencies).await;
+    check_and_print_dependency_versions(
+        "Optional Dependencies",
+        package_json.optional_dependencies,
+    )
+    .await;
+    check_and_print_dependency_versions("Bundled Dependencies", package_json.bundled_dependencies)
+        .await;
 }

@@ -449,7 +449,7 @@ dependencies = [
 
 [[package]]
 name = "patch-pulse-cli"
-version = "0.7.0"
+version = "1.0.0"
 dependencies = [
  "colored",
  "reqwest",

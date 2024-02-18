@@ -1,8 +1,8 @@
 {
-  "name": "patch-pulse-cli",
-  "version": "0.7.0",
+  "name": "patch-pulse",
+  "version": "1.0.0",
   "bin": {
-    "patch-pulse-cli": "lib/index.js"
+    "patch-pulse": "lib/index.js"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
@@ -19,11 +19,11 @@
     "typescript": "^4.9.4"
   },
   "optionalDependencies": {
-    "patch-pulse-cli-linux-x64": "*",
-    "patch-pulse-cli-linux-arm64": "*",
-    "patch-pulse-cli-darwin-x64": "*",
-    "patch-pulse-cli-darwin-arm64": "*",
-    "patch-pulse-cli-windows-x64": "*",
-    "patch-pulse-cli-windows-arm64": "*"
+    "patch-pulse-linux-x64": "*",
+    "patch-pulse-linux-arm64": "*",
+    "patch-pulse-darwin-x64": "*",
+    "patch-pulse-darwin-arm64": "*",
+    "patch-pulse-windows-x64": "*",
+    "patch-pulse-windows-arm64": "*"
   }
 }
