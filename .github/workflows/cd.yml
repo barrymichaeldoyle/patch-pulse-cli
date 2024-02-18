@@ -79,7 +79,7 @@ jobs:
 
       - name: Test Binary
         run: |
-          ./target/${{ matrix.build.TARGET }}/release/your_binary_name
+          ./target/${{ matrix.build.TARGET }}/release/patch-pulse-cli
         if: matrix.build.NAME == 'linux-x64-glibc' # Adjust condition as necessary
 
       - name: Install node
@@ -92,7 +92,7 @@ jobs:
         run: npm cache clean --force
 
       - name: Set execute permissions on the binary
-        run: chmod +x ./target/${{ matrix.build.TARGET }}/release/your_binary_name
+        run: chmod +x ./target/${{ matrix.build.TARGET }}/release/patch-pulse-cli
 
       - name: Publish to NPM
         shell: bash
