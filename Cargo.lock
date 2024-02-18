@@ -448,7 +448,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "patch-pulse-cli"
+name = "patch-pulse"
 version = "1.0.0"
 dependencies = [
  "colored",

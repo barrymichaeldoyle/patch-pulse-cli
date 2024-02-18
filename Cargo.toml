@@ -1,5 +1,5 @@
 [package]
-name = "patch-pulse-cli"
+name = "patch-pulse"
 version = "1.0.0"
 edition = "2021"
 repository = "https://github.com/barrymichaeldoyle/patch-pulse-cli"
