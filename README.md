@@ -1,32 +1,52 @@
 # Patch Pulse
 
-![GitHub Actions](https://github.com/barrymichaeldoyle/patch-pulse-cli/workflows/Continuous%20Deployment/badge.svg)
-![GitHub Actions](https://github.com/barrymichaeldoyle/patch-pulse-cli/workflows/Rust/badge.svg)
-![License](https://img.shields.io/github/license/barrymichaeldoyle/patch-pulse-cli.svg)
-![npm](https://img.shields.io/npm/v/patch-pulse.svg)
-![npm](https://img.shields.io/npm/dm/patch-pulse.svg)
-![GitHub stars](https://img.shields.io/github/stars/barrymichaeldoyle/patch-pulse-cli.svg?style=social)
-![GitHub forks](https://img.shields.io/github/forks/barrymichaeldoyle/patch-pulse-cli.svg?style=social)
+![GitHub Actions Continuous Deployment](https://github.com/barrymichaeldoyle/patch-pulse-cli/workflows/Continuous%20Deployment/badge.svg) ![GitHub Actions Rust](https://github.com/barrymichaeldoyle/patch-pulse-cli/workflows/Rust/badge.svg) ![License](https://img.shields.io/github/license/barrymichaeldoyle/patch-pulse-cli.svg) ![npm Version](https://img.shields.io/npm/v/patch-pulse.svg) ![npm Downloads](https://img.shields.io/npm/dm/patch-pulse.svg) ![GitHub stars](https://img.shields.io/github/stars/barrymichaeldoyle/patch-pulse-cli.svg?style=social) ![GitHub forks](https://img.shields.io/github/forks/barrymichaeldoyle/patch-pulse-cli.svg?style=social)
 
-Patch Pulse is a CLI tool that identifies out of date dependencies in your `package.json` file.
+![Patch Pulse Banner](assets/banner.png)
 
-## How to use
+Patch Pulse is a CLI tool that identifies out-of-date dependencies in your `package.json` file, ensuring your project stays up-to-date with the latest versions available on npm.
 
-Just run the following command on a directory that has a `package.json` file in it:
+## Table of Contents
+
+- [How to Use](#how-to-use)
+- [Built with Rust](#built-with-rust)
+- [Features](#features)
+- [Installation](#installation)
+- [Example](#example)
+- [License](#license)
+- [Author](#author)
+- [Contributing](#contributing)
+- [Support Me](#support-me)
+
+## How to Use
+
+To check your project's dependencies, navigate to your project directory and run:
 
 ```bash
 npx patch-pulse
 ```
 
-This will command with fetch and compare your version of each depency with the latest version available on npm.
-
 ## Built with Rust
 
-This package is built with Rust but the binaries are wrapped in `npx` so you don't need to install anything.
+This package is built with Rust, offering high performance. The binaries are wrapped in npx, requiring no additional installation.
+
+## Features
+
+- **Easy to Use:** Run a single command to check all dependencies.
+- **Comprehensive:** Checks dependencies, devDependencies, peerDependencies, optionalDependencies, and bundledDependencies.
+- **Up-to-Date:** Compares against the latest versions on npm.
+
+## Installation
+
+No installation required! Just ensure you have [Node.js](https://nodejs.org) installed to use npx.
+
+## Example
+
+![Example Screenshot](assets/example.png)
 
 ## License
 
-GNU GPLv3
+This project is licensed under GNU GPLv3 - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 
@@ -34,14 +54,8 @@ This Patch Pulse CLI tool is maintained by [Barry Michael Doyle](https://barrymi
 
 ## Contributing
 
-If you would like to contribute to this project, please open an issue or a pull request. I would love help from the community to make this tool better.
+Contributions are welcome! Please open an issue or submit a pull request.
 
-Currently I'd appreciate help in cleaning up the codebase and adding more tests to the project. I'm relatively new to Rust and would appreciate any help in making the codebase more idiomatic.
+## Support Me
 
-To run the project locally, just add a `package.json` to the root of the repo to test changes and run `cargo run` to see the output.
-
-Ultimately the most helpful thing right now would be raising issues and feature requests so I can understand what the community needs from this tool.
-
-## Current Good First Issues
-
-- Private NPM Registries are not supported yet. The tool works around this by warning that it isn't able to parse the latest version of a dependencies.
+If you like this tool, please consider [supporting me](https://www.buymeacoffee.com/barrycg) to keep the project alive and well-maintained.
