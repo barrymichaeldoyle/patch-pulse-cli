@@ -123,6 +123,7 @@ jobs:
           ls -alh "${GITHUB_WORKSPACE}/target/${{ matrix.build.TARGET }}/release/"
           # copy the binary into the package
           cp "${GITHUB_WORKSPACE}/target/${{ matrix.build.TARGET }}/release/${bin}" "${node_pkg}/bin"
+          ls -alh
           # publish the package
           cd "${node_pkg}"
           npm publish --access public
