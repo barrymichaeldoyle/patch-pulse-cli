@@ -16,6 +16,7 @@ Patch Pulse is a CLI tool that identifies out-of-date dependencies in your `pack
 - [License](#license)
 - [Author](#author)
 - [Contributing](#contributing)
+- [Slack Bot](#slack-bot)
 - [Support Me](#support-me)
 
 ## How to Use
@@ -55,6 +56,12 @@ This Patch Pulse CLI tool is maintained by [Barry Michael Doyle](https://barrymi
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
+
+## Slack Bot
+
+If you'd like to use the Patch Pulse Slack Bot to track when `npm` packages are updated, you can add it to your workspace using the following link:
+
+https://slack.com/oauth/v2/authorize?client_id=180374136631.6017466448468&scope=chat:write,commands,incoming-webhook
 
 ## Support Me
 

@@ -23,17 +23,34 @@ async fn main() {
     println!();
     println!(
         "{}",
-        "Thank you for using Patch Pulse CLI!".bright_green().bold()
+        "Thank you for using Patch Pulse CLI!"
+            .bright_yellow()
+            .bold()
     );
+    println!();
     println!(
-        "{}",
-        "If you find this tool helpful, consider supporting my work: https://www.buymeacoffee.com/barrycg"
-            .bright_green().bold()
+        "{} {}",
+        "If you find this tool helpful, consider supporting my work:"
+            .bright_green()
+            .bold(),
+        "https://www.buymeacoffee.com/barrycg".bright_white().bold()
     );
+    println!();
     println!(
-        "{}",
-        "Found an issue or have a feature request? Please report it here: https://github.com/barrymichaeldoyle/patch-pulse-cli/issues"
-            .bright_green().bold()
+        "{} {}",
+        "Link to Patch Pulse Slack Bot for notifications on updated packages:"
+            .bright_cyan().bold(),
+        "https://slack.com/oauth/v2/authorize?client_id=180374136631.6017466448468&scope=chat:write,commands,incoming-webhook".bright_white().bold()
+    );
+    println!();
+    println!(
+        "{} {}",
+        "Found an issue or have a feature request? Please report it here:"
+            .bright_magenta()
+            .bold(),
+        "https://github.com/barrymichaeldoyle/patch-pulse-cli/issues"
+            .bright_white()
+            .bold()
     );
     println!();
 }
