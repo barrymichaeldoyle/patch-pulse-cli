@@ -1,6 +1,15 @@
 {
   "name": "patch-pulse",
-  "version": "1.1.5",
+  "version": "1.1.6",
+  "license": "GPL-3.0-only",
+  "author": {
+    "name": "Barry Michael Doyle",
+    "email": "barry@barrymichaeldoyle.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barrymichaeldoyle/patch-pulse-cli.git"
+  },
   "bin": {
     "patch-pulse": "lib/index.js"
   },
