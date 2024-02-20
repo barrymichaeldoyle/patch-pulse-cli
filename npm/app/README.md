@@ -3,7 +3,7 @@
 ![GitHub Actions Continuous Deployment](https://github.com/barrymichaeldoyle/patch-pulse-cli/workflows/Continuous%20Deployment/badge.svg) ![GitHub Actions Rust](https://github.com/barrymichaeldoyle/patch-pulse-cli/workflows/Rust/badge.svg) ![License](https://img.shields.io/github/license/barrymichaeldoyle/patch-pulse-cli.svg) [![npm Version](https://img.shields.io/npm/v/patch-pulse.svg)](https://npmjs.com/package/patch-pulse) [![npm Downloads](https://img.shields.io/npm/dm/patch-pulse.svg)](https://npmjs.com/package/patch-pulse)
 ![GitHub stars](https://img.shields.io/github/stars/barrymichaeldoyle/patch-pulse-cli.svg?style=social) ![GitHub forks](https://img.shields.io/github/forks/barrymichaeldoyle/patch-pulse-cli.svg?style=social)
 
-![Patch Pulse Banner](assets/banner.png)
+![Patch Pulse Banner](../../assets/banner.png)
 
 Patch Pulse is a CLI tool that identifies out-of-date dependencies in your `package.json` file, ensuring your project stays up-to-date with the latest versions available on npm.
 
