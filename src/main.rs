@@ -1,10 +1,15 @@
+pub mod models;
+pub mod utils;
+
+use crate::models::package_json::PackageJson;
+use crate::utils::read_package_json::read_package_json;
 use colored::*;
-use patch_pulse::{check_and_print_dependency_versions, read_package_json, PackageJson};
+use patch_pulse::check_and_print_dependency_versions;
 use std::env;
 
 #[tokio::main]
 async fn main() {
-    std::env::set_var("CLICOLOR_FORCE", "1");
+    env::set_var("CLICOLOR_FORCE", "1");
 
     let mut package_json_path = match env::current_dir() {
         Ok(path) => path,
