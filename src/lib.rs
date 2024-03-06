@@ -1,15 +1,15 @@
-use colored::{ColoredString, Colorize};
+use colored::Colorize;
 use reqwest::get;
 use semver::Version;
-use serde_json::{from_str, Value};
+use serde_json;
 use std::cmp::Ordering;
 use std::collections::BTreeMap;
 use std::error::Error;
 
 pub async fn fetch_latest_version(package_name: &str) -> Result<String, Box<dyn Error>> {
-    let url: String = format!("https://registry.npmjs.org/{}/latest", package_name);
-    let response: String = get(url).await?.text().await?;
-    let package_info: Value = from_str(&response)?;
+    let url = format!("https://registry.npmjs.org/{}/latest", package_name);
+    let response = get(url).await?.text().await?;
+    let package_info: serde_json::Value = serde_json::from_str(&response)?;
 
     Ok(package_info["version"]
         .as_str()
@@ -25,8 +25,8 @@ pub async fn check_and_print_dependency_versions(
         println!("{}", format!("{}:", dependency_type).blue().bold());
         println!("{}", "=".repeat(dependency_type.len() + 1).blue().bold());
 
-        let fixed_width: usize = deps.keys().map(String::len).max().unwrap_or(0) + 10;
-        let update_msg_fixed_width: usize = 27;
+        let fixed_width = deps.keys().map(String::len).max().unwrap_or(0) + 10;
+        let update_msg_fixed_width = 27;
 
         for (name, specified_version_str) in deps {
             match fetch_latest_version(&name).await {
@@ -35,12 +35,11 @@ pub async fn check_and_print_dependency_versions(
 
                     match Version::parse(&latest_version_str) {
                         Ok(latest_version) => {
-                            let up_to_date_msg: ColoredString = if let Ok(specified_version) =
-                                Version::parse(
-                                    &specified_version_str
-                                        .trim_start_matches('^')
-                                        .trim_start_matches('~'),
-                                ) {
+                            let up_to_date_msg = if let Ok(specified_version) = Version::parse(
+                                &specified_version_str
+                                    .trim_start_matches('^')
+                                    .trim_start_matches('~'),
+                            ) {
                                 match (
                                     specified_version.major.cmp(&latest_version.major),
                                     specified_version.minor.cmp(&latest_version.minor),

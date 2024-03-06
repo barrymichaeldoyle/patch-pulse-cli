@@ -7,8 +7,7 @@ use std::path::PathBuf;
 
 pub fn read_package_json(path: PathBuf) -> Result<PackageJson, String> {
     println!("\nOpening {:?}", path);
-    let mut file: File =
-        File::open(&path).map_err(|e| format!("Error opening package.json: {}", e))?;
+    let mut file = File::open(&path).map_err(|e| format!("Error opening package.json: {}", e))?;
 
     println!("Reading package.json\n");
     let mut contents = String::new();
